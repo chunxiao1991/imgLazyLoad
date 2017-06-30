@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>web图片懒加载</title>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="yes" name="apple-touch-fullscreen"/>
+	<meta content="telephone=no,email=no" name="format-detection">
+	<style>
+	 body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dt,dd,li,img,input,button {
+	  padding: 0;
+	  margin: 0;
+	  border: none;
+	  font-weight: normal;
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	  -webkit-tap-highlight-color: transparent;
+	}	
+	img{
+		width:100%;
+		display:block;
+	}
+	</style>
+	 <script>
+    	(function(e,n){function l(){var a=h.getBoundingClientRect().width/10;h.style.fontSize=a+"px";k.rem=e.rem=a}var d=e.document,h=d.documentElement,f=d.querySelector('meta[name="viewport"]'),c=d.querySelector('meta[name="flexible"]'),a=0,b=0,m,k=n.flexible||(n.flexible={});if(f){if(console.warn("\u5c06\u6839\u636e\u5df2\u6709\u7684meta\u6807\u7b7e\u6765\u8bbe\u7f6e\u7f29\u653e\u6bd4\u4f8b"),c=f.getAttribute("content").match(/initial\-scale=([\d\.]+)/))b=parseFloat(c[1]),a=parseInt(1/b)}else if(c){var g=
+			c.getAttribute("content");g&&(c=g.match(/initial\-dpr=([\d\.]+)/),g=g.match(/maximum\-dpr=([\d\.]+)/),c&&(a=parseFloat(c[1]),b=parseFloat((1/a).toFixed(2))),g&&(a=parseFloat(g[1]),b=parseFloat((1/a).toFixed(2))))}a||b||(e.navigator.appVersion.match(/android/gi),b=e.navigator.appVersion.match(/iphone/gi),c=e.devicePixelRatio,a=b?3<=c&&(!a||3<=a)?3:2<=c&&(!a||2<=a)?2:1:e.devicePixelRatio?3<=c&&(!a||3<=a)?3:2<=c&&(!a||2<=a)?2:1:1,b=1/a);h.setAttribute("data-dpr",a);f||(f=d.createElement("meta"),f.setAttribute("name",
+			"viewport"),f.setAttribute("content","initial-scale="+b+", maximum-scale="+b+", minimum-scale="+b+", user-scalable=no"),h.firstElementChild?h.firstElementChild.appendChild(f):(b=d.createElement("div"),b.appendChild(f),d.write(b.innerHTML)));e.addEventListener("resize",function(){clearTimeout(m);m=setTimeout(l,300)},!1);e.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(m),m=setTimeout(l,300))},!1);"complete"===d.readyState?d.body.style.fontSize=12*a+"px":d.addEventListener("DOMContentLoaded",
+			function(b){d.body.style.fontSize=12*a+"px"},!1);l();k.dpr=e.dpr=a;k.refreshRem=l;k.rem2px=function(a){var b=parseFloat(a)*this.rem;"string"===typeof a&&a.match(/rem$/)&&(b+="px");return b};k.px2rem=function(a){var b=parseFloat(a)/this.rem;"string"===typeof a&&a.match(/px$/)&&(b+="rem");return b}})(window,window.lib||(window.lib={}));
+    </script>
+</head>
+<body>
+	<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg"  id="box"/> 
+	
+	1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>
+<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg" />
+<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg" />
+<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg" />
+<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg" />
+<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg" />
+<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg" />
+<img  src="http://images2015.cnblogs.com/blog/608782/201605/608782-20160516205933748-797476534.gif" class="imgLazyLoad" data-src="http://office.qq.com/images/title.jpg" /> 
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     <script src="imgLazyLoad-javascript.js"></script>
+  <script>
+ 		/*(function(){
+ 	
+ 			$('.imgLazyLoad').imgLazyLoad({
+ 				time:50,
+ 				offset:100,
+ 				class:"data-src"
+ 			});
+ 		})();*/
+ 	
+      
+ 	</script> 
+
+</body>
+</html>
